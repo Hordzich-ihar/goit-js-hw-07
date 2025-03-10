@@ -40,3 +40,11 @@ images.forEach(image => {
 
 gallery.append(...galleryItemsArray);
 
+
+
+
+
+
+
+
+
