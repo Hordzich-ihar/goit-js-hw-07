@@ -100,9 +100,10 @@ applyStyles(boxes, {
 const getRandomHexColor = () =>
   `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0")}`;
 
-// Функция создания квадратов
+// 
 const createBoxes = (amount) => {
-  boxes.innerHTML = ""; // Очищаем перед добавлением новых
+  boxes.innerHTML = ""; 
+  const fragment = document.createDocumentFragment(); 
   let size = 30;
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
@@ -112,9 +113,11 @@ const createBoxes = (amount) => {
       backgroundColor: getRandomHexColor(),
       borderRadius: "4px",
     });
-    boxes.appendChild(box);
+    fragment.appendChild(box); 
     size += 10;
   }
+
+  boxes.appendChild(fragment); 
 };
 
 // Функция очистки квадратов и сброса input
